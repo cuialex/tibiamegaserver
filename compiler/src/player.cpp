@@ -1461,6 +1461,7 @@ void Player::addExperience(uint64_t exp, bool sendText/* = false*/, bool applySt
 	}
 
 	experience += exp;
+        g_game.addAnimatedText(getPosition(), TEXTCOLOR_WHITE_EXP, std::to_string(exp));
 		
 		if (isPremium()) {
 			sendTextMessage(MESSAGE_EVENT_DEFAULT, "You gained " + std::to_string(exp) + " experience points");

@@ -3548,9 +3548,6 @@ bool Game::combatChangeHealth(Creature* attacker, Creature* target, CombatDamage
 		}
 
 		target->drainHealth(attacker, realDamage);
-		if (attackerPlayer) {
-	attackerPlayer->sendTextMessage(MESSAGE_STATUS_DEFAULT, "DEBUG monster=" + std::to_string(target->getMonster() != nullptr) + " dmg=" + std::to_string(realDamage) + " life=" + std::to_string(attackerPlayer->getItemBonus(&ItemType::lifeLeech)));
-}
 		// Life Leech y Mana Leech: solo contra monstruos, y una sola vez por ataque
 		if (attackerPlayer && target->getMonster()) {
 			
@@ -3607,6 +3604,7 @@ bool Game::combatChangeHealth(Creature* attacker, Creature* target, CombatDamage
 				targetPlayer->sendTextMessage(MESSAGE_EVENT_DEFAULT, ss.str());
 			}
 
+            if (attackerPlayer && attackerPlayer != targetPlayer) { attackerPlayer->sendTextMessage(MESSAGE_EVENT_DEFAULT, ucfirst(target->getNameDescription()) + " loses " + damageString + " due to your attack."); }
 			std::string realDamageStr = std::to_string(realDamage);
 			for (Creature* spectator : list) {
 				Player* tmpPlayer = spectator->getPlayer();
