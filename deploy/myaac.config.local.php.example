@@ -1,0 +1,6 @@
+<?php
+// Anade estas lineas al final de config.local.php de MyAAC.
+// Ciudad donde nacen los personajes creados desde la web.
+// 1 = Thais (solo si ya corregiste el templo con tools/fix_thais_temple.py)
+// 2 = Carlin (funciona sin parchear el mapa)
+$config['character_towns'] = [1];

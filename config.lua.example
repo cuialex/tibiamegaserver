@@ -1,0 +1,35 @@
+-- Copia este archivo a compiler/config.lua y cambia los valores marcados.
+-- NUNCA subas config.lua a GitHub (esta en .gitignore).
+
+-- RED
+-- Pon aqui la IP publica o el dominio de tu servidor (lo que ve el cliente).
+ip = "TU_IP_O_DOMINIO"
+bindOnlyGlobalAddress = false
+-- El cliente entra por el puerto de LOGIN. Debe ser 7171.
+loginProtocolPort = 7171
+gameProtocolPort = 7172
+-- El puerto de estado NO puede ser el mismo que el de login.
+statusProtocolPort = 7176
+
+-- DATOS DEL SERVIDOR
+serverName = "Tibiaserver"
+ownerName = "TuNombre"
+worldType = "pvp"
+maxPlayers = 100
+motd = "Bienvenido"
+mapName = "maptest"
+mapAuthor = "TuNombre"
+
+-- BASE DE DATOS (la crea setup.sh con una contrasena aleatoria)
+mysqlHost = "127.0.0.1"
+mysqlUser = "tibia"
+mysqlPass = "CAMBIAME"
+mysqlDatabase = "tibiacore"
+mysqlPort = 3306
+mysqlSock = ""
+
+-- RATES
+rateExp = 5
+rateSkill = 3
+rateLoot = 2
+rateMagic = 3

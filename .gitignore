@@ -1,0 +1,23 @@
+# Secretos y configuracion local
+compiler/config.lua
+config.lua
+.env
+*.pem
+*.key
+
+# Compilacion y basura
+compiler/build/
+build/
+*.log
+*.bak
+*.bak2
+*.bak3
+
+# Copias de base de datos (pueden traer cuentas y contrasenas reales)
+all_databases.sql
+*.sql.gz
+dump*.sql
+tibiacore-backup*.sql
+
+# MyAAC (se instala aparte)
+config.local.php
