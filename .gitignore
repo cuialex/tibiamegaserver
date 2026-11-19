@@ -21,3 +21,4 @@ tibiacore-backup*.sql
 
 # MyAAC (se instala aparte)
 config.local.php
+web/config.local.php
